@@ -83,6 +83,25 @@ Hardaware fisik yang menjalankan software virtualisasi(hypervisor) disebut <mark
 
 ***
 
+## Protection ring
+
+<figure><img src="https://www.tutorialspoint.com/assets/questions/media/629838-1700653312.jpg" alt=""><figcaption></figcaption></figure>
+
+Didalam komputer yang kita jalankan terdapat sebuah mekanisme yang mengatur hak istimewa pada setiap lapisannya, mekanisme ini disebut **Protection Ring**. **Protection Ring** disusun dari beberapa urutan lapisan tingkatan hak istimewa dari yang paling tinggi sampai yang paling rendah.&#x20;
+
+Hardware yang memiliki CPU dengan arsitektur x86 memiliki 4 lapisan, dari Ring 0 sampai Ring 3. dimana Ring 0 memiliki hak istimewa paling tinggi dan digunakan oleh OS untuk mengatur dan mengelola hardware, sedangkan **Ring 3** digunakan oleh pengguna aplikasi dengan hak istimewa yang rendah sehingga terbatas untuk mengakses sumber daya hardwarenya.
+
+### Apa Keuntungannya?&#x20;
+
+1. **Dapat meningkatkan keamanan sistem operasi**\
+   Ketika suatu proses membutuhkan instruksi yang memerlukan sumber daya CPU(seperti cache, thread, core, instruction set, dll), proses tersebut akan mengirimkan request dan meminta persetujuan dari sistem operasi. Sistem operasi akan menentukan apakah proses tersebut layak diberikan hak akses istimewa atau tidak. Dengan demikian, sistem operasi dapat mengontrol akses dan mencegah proses berbahaya atau serangan eksternal untuk mengakses sumber daya yang sensitif.
+2. Toleransi terhadap kesalahan(**fault tolerance**)\
+   Crash pada sistem(program gagal dan berheti bekerja) dapat dikurangi dengan memberikan toleransi kesalahan(fault tolerance) kepada aplikasi ataupun program yang memiliki akses langsung ke ruang kernel di Ring 0. Sehingga semisal terdapat crash, Ring 0 akan memberikan toleransi untuk mencegah terjadinya crash di seluruh sistem. Jadi, sistem tetap berfungsi normal. &#x20;
+
+
+
+***
+
 ## Tipe Virtualisasi Server
 
 ### **Full virtualization**
