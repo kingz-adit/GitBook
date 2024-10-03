@@ -100,12 +100,20 @@ Hardware yang memiliki CPU dengan arsitektur x86 memiliki 4 lapisan, dari Ring 0
 
 ### Level Protection Ring
 
-* Ring 0\
+* **Ring 0**\
+  [Kernel](https://www.javatpoint.com/what-is-kernel) adalah program yang menjadi inti pada OS, bisa diibaratkan kernel itu seperti jantung dari OS. Karena kernel berada pada Ring 0, kernel dapat mengakses seluruh sumber daya sistem(CPU dan memori) . Proses yang berjalan pada Ring 0 disebut proses mode kernel. Proses pada mode kernel memiliki hak istimewa yang tinggi, sehingga dapat memengaruhi seluruh sistem. &#x20;
+* **Ring 1**\
+  Biasanya OS memanfaatkan Ring 1 untuk berinteraksi dengan hardware komputer. Interaksi dengan hardware ini akan menjalankan instruksi proses, contohnya kita ingin melakukan streaming/mengambil video dengan kamera laptop dan mengetik pada keyboard laptop.
+* **Ring 2**\
+  Ring 2 berfungsi untuk mengeksekusi perintah yang berkaitan dengan sistem penyimpanan, pemuatan data, dan menyimpan data. Misalnya ketika OS perlu mengelola data di penyimpanan, seperti membaca atau menulis file dari disk, operasi ini akan dilakukan pada Ring 2.
+* **Ring 3**\
+  User dapat menjalankan sebuah proses pada Ring 3(hak istimewa rendah). Ketika proses user membutuhkan sumber daya, maka proses tersebut akan diteruskan ke kernel pada Ring 0, tujuannya agar proses tersbut dapat mengakses sumber daya untuk aplikasi yang dibutuhkan. Aplikasi seperti web browser, editor teks, dan game berjalan pada Ring 3.
 
-* Ring 1 dan Ring 2\
+### Interaksi pada Privilege Rings
 
-* Ring 3\
-
+* **Supervisor Mode**\
+  Supervisor mode atau privilege mode&#x20;
+* **Hypervisor Mode**
 
 **Sumber:**
 
