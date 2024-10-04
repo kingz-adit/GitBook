@@ -112,10 +112,13 @@ Hardware yang memiliki CPU dengan arsitektur x86 memiliki 4 lapisan, dari Ring 0
 ### Interaksi pada Privilege Rings
 
 * **Supervisor Mode**\
-  Supervisor mode atau privilege mode&#x20;
-* **Hypervisor Mode**
+  [Supervisor mode/privilege mode](https://www.tutorialspoint.com/supervisor-mode-privileged-mode) adalah mode yang akan mengeksekusi semua jenis instruksi, termasuk juga privileged instructions. Mode ini digunakan prosesor untuk menjalankan tugas seperti penjadwalan proses, pengelolaan memori, instruksi interupsi, manajemen input dan output untuk menjaga stabilitas dan keamanan sistem. Biasanya, OS berjalan pada mode ini karena membutuhkan akses kontrol penuh atas sumber daya hardware.
+* **Hypervisor Mode**\
+  [Mode ini](https://www.geeksforgeeks.org/protection-ring/) didukung oleh versi CPU terbaru, dengan menyediakan fitur virtualisasi untuk arsitektur x86. Guest OS menggunakan mode hypervisor untuk mengontrol akses sumber daya pada hardware(Ring 0). Intel VT-x dan AMD-v membuat lapisan baru yaitu Ring -1. Ring baru ini(Ring -1) dimaksudkan untuk digunakan oleh hypervisor.
 
 **Sumber:**
+
+{% embed url="https://www.geeksforgeeks.org/protection-ring/" %}
 
 {% embed url="https://www.tutorialspoint.com/protection-ring" %}
 
